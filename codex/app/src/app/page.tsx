@@ -1,103 +1,148 @@
-import Image from "next/image";
+import Hero from "../components/Hero";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* 概要カード */}
+      <section id="overview" className="mx-auto max-w-6xl px-4 sm:px-6 pb-4">
+        <h2 className="text-2xl font-semibold tracking-tight">概要</h2>
+        <p className="mt-2 max-w-2xl text-neutral-600">各ツールの位置づけと得意分野を手短にまとめました。</p>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Claude Code */}
+          <article className="group rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:shadow-md">
+            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-indigo-500 to-blue-400 text-white grid place-items-center font-bold">
+              C
+            </div>
+            <h3 className="mt-4 text-lg font-semibold">Claude Code</h3>
+            <p className="mt-1 text-sm text-neutral-600">深いコードベース理解と反復的な開発を支援する、コード特化のAIアシスタント。開発環境に密接に統合。</p>
+            <ul className="mt-4 space-y-1 text-sm text-neutral-700">
+              <li>• ファイル横断のリポジトリ認識推論</li>
+              <li>• 計画立案・実装・リファクタまでを支援</li>
+              <li>• テストやデバッグのワークフローも支援</li>
+              <li>• 複雑な変更を会話で誘導</li>
+            </ul>
+          </article>
+
+          {/* Codex */}
+          <article className="group rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:shadow-md">
+            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-neutral-900 to-neutral-700 text-white grid place-items-center font-bold">
+              X
+            </div>
+            <h3 className="mt-4 text-lg font-semibold">Codex (CLI)</h3>
+            <p className="mt-1 text-sm text-neutral-600">ローカルリポジトリ上でのエージェント的なコーディングに特化したターミナル・ネイティブなオープンインターフェース。明確な計画と安全な編集が特長。</p>
+            <ul className="mt-4 space-y-1 text-sm text-neutral-700">
+              <li>• 段階的な計画と進捗の提示</li>
+              <li>• 対象を絞ったファイルパッチ適用</li>
+              <li>• 承認付きでシェルコマンド実行</li>
+              <li>• 手元のコードベースに直接適用</li>
+            </ul>
+          </article>
+
+          {/* Gemini CLI */}
+          <article className="group rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:shadow-md">
+            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-cyan-500 to-sky-400 text-white grid place-items-center font-bold">
+              G
+            </div>
+            <h3 className="mt-4 text-lg font-semibold">Gemini CLI</h3>
+            <p className="mt-1 text-sm text-neutral-600">Geminiモデルを軽量なCLIから利用。素早いタスク、試作、スクリプト用途に適する。</p>
+            <ul className="mt-4 space-y-1 text-sm text-neutral-700">
+              <li>• コード/テキストへの迅速なプロンプト</li>
+              <li>• シェルのパイプラインやスクリプトに馴染む</li>
+              <li>• ツール連携向けの構造化出力</li>
+              <li>• アドホックな実験が容易</li>
+            </ul>
+          </article>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* 主な特徴 */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
+        <h2 className="text-2xl font-semibold tracking-tight">主な特徴</h2>
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+            <h3 className="text-base font-semibold">Claude Code</h3>
+            <ul className="mt-3 space-y-2 text-sm text-neutral-700">
+              <li>• 大規模リポジトリでも深い文脈把握</li>
+              <li>• 段階的推論と丁寧な説明</li>
+              <li>• リファクタやテストを伴う作業を誘導</li>
+              <li>• 自然言語ベースの強力なコード支援</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+            <h3 className="text-base font-semibold">Codex (CLI)</h3>
+            <ul className="mt-3 space-y-2 text-sm text-neutral-700">
+              <li>• 手順を明確化し段階的に追跡</li>
+              <li>• パッチによるピンポイントな編集</li>
+              <li>• 安全機構付きのシェル統合</li>
+              <li>• 簡潔で開発者フレンドリーなUX</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+            <h3 className="text-base font-semibold">Gemini CLI</h3>
+            <ul className="mt-3 space-y-2 text-sm text-neutral-700">
+              <li>• 素早いプロンプトとコード変換</li>
+              <li>• パイプラインや定期実行に適合</li>
+              <li>• JSON等の構造化出力に対応</li>
+              <li>• 最小構成で試せる</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 比較テーブル */}
+      <section id="compare" className="mx-auto max-w-6xl px-4 sm:px-6 pb-20">
+        <h2 className="text-2xl font-semibold tracking-tight">比較</h2>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-neutral-200">
+          <div className="grid grid-cols-4 bg-neutral-50/60 text-sm font-medium">
+            <div className="px-4 py-3">観点</div>
+            <div className="px-4 py-3">Claude Code</div>
+            <div className="px-4 py-3">Codex (CLI)</div>
+            <div className="px-4 py-3">Gemini CLI</div>
+          </div>
+          {[
+            {
+              aspect: "主な形態",
+              claude: "IDE/開発環境アシスタント",
+              codex: "ターミナル主体のコーディングエージェント",
+              gemini: "CLI経由でLLM利用",
+            },
+            {
+              aspect: "強み",
+              claude: "リポジトリ横断の推論",
+              codex: "安全で焦点の定まった編集",
+              gemini: "素早いアドホック作業",
+            },
+            {
+              aspect: "適した用途",
+              claude: "複雑なコード変更",
+              codex: "ローカルリポジトリでの作業",
+              gemini: "プロトタイピング・スクリプト",
+            },
+            {
+              aspect: "ワークフローの型",
+              claude: "会話型ガイダンス",
+              codex: "計画 → パッチ適用 → 検証",
+              gemini: "プロンプト → 出力",
+            },
+          ].map((row, i) => (
+            <div key={row.aspect} className={`grid grid-cols-4 text-sm ${i % 2 ? "bg-white" : "bg-neutral-50/40"}`}>
+              <div className="px-4 py-3 font-medium text-neutral-900">{row.aspect}</div>
+              <div className="px-4 py-3 text-neutral-700">{row.claude}</div>
+              <div className="px-4 py-3 text-neutral-700">{row.codex}</div>
+              <div className="px-4 py-3 text-neutral-700">{row.gemini}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <footer className="border-t border-neutral-200/80 py-10">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 text-sm text-neutral-600">
+          Next.js と Tailwind で構築。テーマ: ライト。
+        </div>
       </footer>
-    </div>
+    </>
   );
 }
